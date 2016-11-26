@@ -6,12 +6,26 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Random Quote Machine</title>
-    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#newQuote").on("click", function () {
+                $.getJSON("https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en", function (json) {
+                    $("#quoteText").html(JSON.stringify(json.quoteText));
+                    $("#quoteAuthor").html(JSON.stringify(json.quoteAuthor));
+                });
+            });
+
+        });
+    </script>
 </head>
 
 <body>
     <div>
-        <p id="message">The Random Quote Will Be Here!</p>
+        <p id="quoteText">The Random Quote Will Be Here!</p>
+    </div>
+    <div>
+        <p id="quoteAuthor">The Quote Author will be here!</p>
     </div>
     <div>
         <button id="newQuote">New Quote!</button>
