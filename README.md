@@ -1,3 +1,1 @@
-/**
- * Created by lamars on 11/24/16.
- */
+* freecodecamp - Project Name: Build A Random Quote Machine
