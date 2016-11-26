@@ -8,24 +8,23 @@
     <title>Random Quote Machine</title>
     <script>
         $(document).ready(function () {
-
-            $("#newQuote").on("click", function () {
-                $.getJSON("https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en", function (json) {
+            $("#newQuote").on('click', function () {
+                $.getJSON("https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en", function (json) {
                     $("#quoteText").html(JSON.stringify(json.quoteText));
                     $("#quoteAuthor").html(JSON.stringify(json.quoteAuthor));
+                    $.ajaxSetup({ cache: false});
                 });
             });
-
         });
     </script>
 </head>
 
 <body>
     <div>
-        <p id="quoteText">The Random Quote Will Be Here!</p>
+        <p id="quoteText">"Everyone can taste success when the going is easy, but few know how to taste victory when times get tough."</p>
     </div>
     <div>
-        <p id="quoteAuthor">The Quote Author will be here!</p>
+        <p id="quoteAuthor">"Byron Pulsifer"</p>
     </div>
     <div>
         <button id="newQuote">New Quote!</button>
