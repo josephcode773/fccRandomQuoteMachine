@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Random Quote Machine</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
             $("#newQuote").on('click', function () {
@@ -19,18 +21,25 @@
     </script>
 </head>
 
-<body>
-    <div>
-        <p id="quoteText">"Everyone can taste success when the going is easy, but few know how to taste victory when times get tough."</p>
-    </div>
-    <div>
-        <p id="quoteAuthor">"Byron Pulsifer"</p>
-    </div>
-    <div>
-        <button id="newQuote">New Quote!</button>
+<body class="w3-red">
+    <div class="w3-container w3-center">
+        <h2><u>Quote Machine-a-Tron 3000</u></h2>
+        <h4>This machine generates random quotes.</h4>
+
+        <blockquote class="w3-panel w3-light-grey">
+                <p id="quoteText" class="w3-xlarge"><i>"Make it as simple as possible, but not simpler."</i></p>
+                <p id="quoteAuthor">Albert Einstein</p>
+        </blockquote>
     </div>
 
+    <div class="w3-container w3-center">
+        <button>Tweet This!</button>
+        <button id="newQuote">New Quote</button>
+    </div>
 
+    <div class="w3-container w3-center">
+        <p>By: josephcode773</p>
+    </div>
 </body>
 
 </html>
