@@ -16,12 +16,12 @@
                 $.getJSON("https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en", function (json) {
                     $("#quoteText").html(JSON.stringify(json.quoteText));
                     $("#quoteAuthor").html(JSON.stringify(json.quoteAuthor));
-                    tweetText = json.quoteText + ' - ' + json.quoteAuthor + ' --- #quote';
-//                    $("a.myLink").attr("href", function (tweetText) {
-//                        var textie = "https://twitter.com/intent/tweet?text=funky+funky+funkytime!";
-//                        return textie;
-//                    });
-                    $("a.myLink").attr("href", "https://twitter.com/intent/tweet?text=this+is+a+test");
+                    tweetText = json.quoteText + json.quoteAuthor;
+                    $("a.myLink").attr("href", function () {
+                        var textie = '';
+                        textie = "https://twitter.com/intent/tweet?text=Quote: "+tweetText;
+                        return textie;
+                    });
                     $.ajaxSetup({ cache: false});
                 });
             });
@@ -32,7 +32,7 @@
 <body class="w3-red">
 <div class="w3-container">
     <div class="w3-center">
-        <h2><u>Quote Machine 3000</u></h2>
+        <h1><u>Quote Machine 3000</u></h1>
         <h4>This machine generates random quotes.</h4>
 
         <blockquote class="w3-panel w3-light-grey">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="w3-center">
-        <a class="myLink" href=""><button>Tweet This!</button></a>
+        <a class="myLink" href="https://twitter.com/intent/tweet?text=Make+it+as+simple+as+possible,+but+not+simpler+.+Albert Einstein"><button>Tweet This!</button></a>
         <button id="newQuote">New Quote</button>
     </div>
 </div>
