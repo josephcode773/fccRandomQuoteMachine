@@ -7,45 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script>
-        var tweetText = '';
-        $(document).ready(function () {
-            $("#newQuote").on('click', function () {
-                $.getJSON("https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en", function (json) {
-                    $("#quoteText").html(JSON.stringify(json.quoteText));
-                    $("#quoteAuthor").html(JSON.stringify(json.quoteAuthor));
-                    tweetText = json.quoteText + json.quoteAuthor;
-                    $("a.myLink").attr("href", function () {
-                        var textie = '';
-                        textie = "https://twitter.com/intent/tweet?text=Quote: "+tweetText;
-                        return textie;
-                    });
-                    $.ajaxSetup({ cache: false});
-                });
-            });
-        });
-    </script>
+    <!--<script>-->
+        <!--var tweetText = '';-->
+        <!--$(document).ready(function () {-->
+            <!--$("#newQuote").on('click', function () {-->
+                <!--$.getJSON("https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en", function (json) {-->
+                    <!--$("#quoteText").html(JSON.stringify(json.quoteText));-->
+                    <!--$("#quoteAuthor").html(JSON.stringify(json.quoteAuthor));-->
+                    <!--tweetText = json.quoteText + json.quoteAuthor;-->
+                    <!--$("a.myLink").attr("href", function () {-->
+                        <!--var textie = '';-->
+                        <!--textie = "https://twitter.com/intent/tweet?text=Quote: "+tweetText;-->
+                        <!--return textie;-->
+                    <!--});-->
+                    <!--$.ajaxSetup({ cache: false});-->
+                <!--});-->
+            <!--});-->
+        <!--});-->
+    <!--</script>-->
 </head>
 
 <body class="w3-red">
-<div class="w3-container">
-    <div class="w3-center">
-        <h1><u>Quote Machine 3000</u></h1>
-        <h4>This machine generates random quotes.</h4>
+    <div class="w3-container">
+        <div class="w3-center">
+            <h1><u>Quote Machine 3000</u></h1>
+            <h4>This machine generates random quotes.</h4>
 
-        <blockquote class="w3-panel w3-light-grey">
-                <p id="quoteText" class="w3-xlarge"><i>"Make it as simple as possible, but not simpler."</i></p>
-                <p id="quoteAuthor">"Albert Einstein"</p>
-        </blockquote>
-    </div>
+            <blockquote class="w3-panel w3-light-grey">
+                    <p id="quoteText" class="w3-xlarge"><i>"Make it as simple as possible, but not simpler."</i></p>
+                    <p id="quoteAuthor">"Albert Einstein"</p>
+            </blockquote>
+        </div>
 
-    <div class="w3-center">
-        <a class="myLink" href="https://twitter.com/intent/tweet?text=Make+it+as+simple+as+possible,+but+not+simpler+.+Albert Einstein"><button>Tweet This!</button></a>
-        <button id="newQuote">New Quote</button>
+        <div class="w3-center">
+            <a class="myLink" href="https://twitter.com/intent/tweet?text=Make+it+as+simple+as+possible,+but+not+simpler+.+Albert Einstein"><button>Tweet This!</button></a>
+            <button id="newQuote">New Quote</button>
+        </div>
     </div>
-</div>
+<script src="script.js"></script>
 </body>
 
 </html>
